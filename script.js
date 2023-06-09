@@ -9,6 +9,7 @@ let luckyStudent = '';
 let pickedText = document.querySelector(".picked-text")
 let pickerBtn = document.querySelector(".picker-button")
 let val = document.querySelector('.sum-students')
+let luckyStudentArr = [];
 function getVal() {
   pickerBtn.disabled =false;
     if (studentArr.length != 0) {
@@ -56,7 +57,7 @@ function randomGen() {
         console.log(`hello ${studentArr.splice(index, 1)}`) ; // 2nd parameter means remove one item only
         }
         console.log(studentArr); 
-        studentList.textContent = `Student List: ${studentArr}`
+        studentList.textContent = `Student: ${studentArr}`
         }
 
 }
@@ -69,10 +70,9 @@ function picker() {
     
   let randomMath =  Math.floor(Math.random()*studentArr.length)
   luckyStudent = studentArr[randomMath];
-  
+  luckyStudentArr.push(luckyStudent);
 
   for (i=0; i < studentArr.length; i++) {
-
     const index = studentArr.indexOf(luckyStudent);
     if (index > -1) { // only splice array when item is found
     console.log(`hello ${studentArr.splice(index, 1)}`) ; // 2nd parameter means remove one item only
@@ -82,18 +82,13 @@ function picker() {
     }
 if (studentArr.length <= 0) {
   pickerBtn.disabled =true;
+  pickedText.textContent = luckyStudentArr.join(" , "); // this gives out the array then seperates it with a ,
   return
 } else {
   picked.textContent = `Lucky Student: ${luckyStudent}`
+  pickedText.textContent = luckyStudentArr.join(" , ");
 
-  pickedLog()
 }
-}
-
-
-
-function pickedLog () {
-  pickedText.textContent += ` [ ${luckyStudent} ] `;
 }
 
 function reset () {
