@@ -1,15 +1,21 @@
 
-let absent = document.querySelector(".absent")
+const absent = document.querySelector(".absent")
 let studentArr = [];
-let studentList =  document.querySelector(".list")
+const studentList =  document.querySelector(".list")
 let absentArray = [];
-let absentList = document.querySelector(".absent-list")
-let picked = document.querySelector(".picked")
+const absentList = document.querySelector(".absent-list")
+const picked = document.querySelector(".picked")
 let luckyStudent = '';
-let pickedText = document.querySelector(".picked-text")
-let pickerBtn = document.querySelector(".picker-button")
-let val = document.querySelector('.sum-students')
+const pickedText = document.querySelector(".picked-text")
+const pickerBtn = document.querySelector(".picker-button")
+const val = document.querySelector('.sum-students')
 let luckyStudentArr = [];
+
+
+
+
+
+
 function getVal() {
   pickerBtn.disabled =false;
     if (studentArr.length != 0) {
@@ -78,15 +84,17 @@ function picker() {
     console.log(`hello ${studentArr.splice(index, 1)}`) ; // 2nd parameter means remove one item only
     }
     console.log(studentArr); 
-    studentList.textContent = `Student List: ${studentArr}`
+    studentList.textContent = studentArr;
     }
 if (studentArr.length <= 0) {
   pickerBtn.disabled =true;
-  pickedText.textContent = luckyStudentArr.join(" , "); // this gives out the array then seperates it with a ,
+  //pickedText.textContent = luckyStudentArr.join(" , "); // this gives out the array then seperates it with a ,
+  previousStudent()
   return
 } else {
-  picked.textContent = `Lucky Student: ${luckyStudent}`
-  pickedText.textContent = luckyStudentArr.join(" , ");
+  picked.textContent = luckyStudent;
+  //pickedText.textContent = `Student #: ${luckyStudentArr.join(" , ")}`;
+  previousStudent()
 
 }
 }
@@ -95,4 +103,14 @@ function reset () {
   val.value = '';
   absent.value = '';
   location.reload();
+}
+
+
+//TODO: use a forloop to fix current picked number and previous picked number! Maybe we need to make an array just to show previous picked (basically copying the pickedArray then removing the last one via pop)
+
+
+function previousStudent() {
+const cloneLuckyStudentArr = [...luckyStudentArr];
+cloneLuckyStudentArr.pop();
+pickedText.textContent = `Student #: ${cloneLuckyStudentArr.join(" , ")}`;
 }
