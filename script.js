@@ -88,6 +88,7 @@ function picker() {
     }
 if (studentArr.length <= 0) {
   pickerBtn.disabled =true;
+  picked.textContent = luckyStudent;
   //pickedText.textContent = luckyStudentArr.join(" , "); // this gives out the array then seperates it with a ,
   previousStudent()
   return
@@ -112,5 +113,5 @@ function reset () {
 function previousStudent() {
 const cloneLuckyStudentArr = [...luckyStudentArr];
 cloneLuckyStudentArr.pop();
-pickedText.textContent = `Student #: ${cloneLuckyStudentArr.join(" , ")}`;
+pickedText.textContent = `Previous #: ${cloneLuckyStudentArr.join(" , ")}`;
 }
