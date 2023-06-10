@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-
-</head>
-<body>
-    <p class="list-title">Student #:</p>
-    <p class="list"></p>
-    <p class="absent-title">Excluded Student #:</p>
-    <p class="absent-list">Absent:</p>
-    <input class="sum-students" type="text" placeholder="number of students">
-    <input class="absent" type="text" placeholder="absent student">
-    <button onclick="getVal(), exclude()"> save </button>
-    <p class="picked">0</p>
-    <button class="picker-button" onclick="picker()"> generate lucky student </button>
-    <p class="picked-text">Previous #:</p>
-    <button class="reset" onclick="reset()" value="Reset">reset</button>
-
-<script src="script.js"></script>
-
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<p class="list-title">Student #:</p>
+		<p class="list"></p>
+		<p class="absent-title">Excluded Student #:</p>
+		<p class="absent-list">Absent:</p>
+		<input class="sum-students" type="text" placeholder="number of students" />
+		<input class="absent" type="text" placeholder="absent student" />
+		<button onclick="getVal(), exclude()">save</button>
+		<p class="picked">0</p>
+		<button class="picker-button" onclick="picker()">generate lucky student</button>
+		<p class="picked-text">Previous #:</p>
+		<button class="reset" onclick="reset()" value="Reset">reset</button>
+		<div id="myProgress">
+			<div id="myBar"></div>
+		</div>
+		<script src="script.js"></script>
+	</body>
 </html>
-
-
