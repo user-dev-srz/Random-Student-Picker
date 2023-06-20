@@ -112,11 +112,11 @@ function studentUlEl() {
 		list.innerHTML = ''; // this removes the innerElement (all the li element)
 	}
 
-	for (let i = 1; i <= studentArr.length; i++) {
+	for (let i = 0; i < studentArr.length; i++) {
 		const listItem = document.createElement('li');
-		listItem.id = `student${i}`;
+		listItem.id = `student${studentArr[i]}`;
 		listItem.style.backgroundColor = 'rgb(200, 200, 200)';
-		listItem.textContent = i;
+		listItem.textContent = studentArr[i];
 		list.append(listItem);
 	}
 
@@ -130,9 +130,9 @@ function studentUlEl() {
 	}
 
 	//! this excludes the absent (student bubble deleted)
-	for (i = 0; i <= absentArray.length; i++) {
-		document.getElementById(`student${absentArray[i]}`).remove();
-	}
+	//for (i = 0; i <= absentArray.length; i++) {
+	//	document.getElementById(`student${absentArray[i]}`).remove();
+	//	}
 
 	// let li = document.querySelectorAll('li'); DON'T KNOW WHAT THIS IS FOR
 }
