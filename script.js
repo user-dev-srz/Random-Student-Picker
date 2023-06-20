@@ -9,6 +9,7 @@ const pickedText = document.querySelector('.picked-text');
 const pickerBtn = document.querySelector('.picker-button');
 const val = document.querySelector('.sum-students');
 let luckyStudentArr = [];
+let studentBg = [];
 
 function getVal() {
 	pickerBtn.disabled = false;
@@ -83,6 +84,13 @@ function picker() {
 		//pickedText.textContent = `Student #: ${luckyStudentArr.join(" , ")}`;
 		previousStudent();
 	}
+
+	for (i = 0; i < luckyStudentArr.length; i++) {
+		console.log(i);
+		let student = document.getElementById(`student${luckyStudentArr[i]}`);
+		student.style.color = 'black';
+		student.style.background = studentBg[i];
+	}
 }
 
 function reset() {
@@ -97,4 +105,30 @@ function previousStudent() {
 	const cloneLuckyStudentArr = [...luckyStudentArr];
 	cloneLuckyStudentArr.pop();
 	pickedText.textContent = `Previous #: ${cloneLuckyStudentArr.join(' , ')}`;
+}
+
+function studentUlEl() {
+	const list = document.querySelector('.studentUl');
+	if (studentArr.length != 0) {
+		list.innerHTML = ''; // this removes the innerElement (all the li element)
+	}
+
+	for (let i = 1; i <= studentArr.length; i++) {
+		const listItem = document.createElement('li');
+		listItem.id = `student${i}`;
+		listItem.style.backgroundColor = 'rgb(200, 200, 200)';
+		listItem.textContent = i;
+		list.append(listItem);
+	}
+
+	function getRandomColor() {
+		let color = 'hsl(' + Math.random() * 360 + ', 100%, 60%)';
+		return color;
+	}
+
+	for (i = 0; i < studentArr.length; i++) {
+		studentBg.push(getRandomColor());
+	}
+
+	// let li = document.querySelectorAll('li'); DON'T KNOW WHAT THIS IS FOR
 }

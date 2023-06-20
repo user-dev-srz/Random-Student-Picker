@@ -1,9 +1,25 @@
 body {
-    background:black;
-    color:white;
+	background: black;
+	color: white;
 }
 
 .picked {
-font-size:2rem;
+	font-size: 2rem;
+}
 
+ul {
+	display: grid;
+	grid-area: a;
+	grid-template: 'a a a a a';
+	gap: 10px;
+	list-style-type: none;
+	text-align: center;
+	line-height: 50px;
+	width: 400px;
+}
+
+li {
+	background: burlywood;
+	width: 50px;
+	border-radius: 50px;
 }
