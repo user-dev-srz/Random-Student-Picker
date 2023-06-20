@@ -73,6 +73,12 @@ function picker() {
 		console.log(studentArr);
 		studentList.textContent = studentArr;
 	}
+	for (i = 0; i < luckyStudentArr.length; i++) {
+		console.log(i);
+		let student = document.getElementById(`student${luckyStudentArr[i]}`);
+		student.style.color = 'black';
+		student.style.background = studentBg[i];
+	}
 	if (studentArr.length <= 0) {
 		pickerBtn.disabled = true;
 		picked.textContent = luckyStudent;
@@ -83,13 +89,6 @@ function picker() {
 		picked.textContent = luckyStudent;
 		//pickedText.textContent = `Student #: ${luckyStudentArr.join(" , ")}`;
 		previousStudent();
-	}
-
-	for (i = 0; i < luckyStudentArr.length; i++) {
-		console.log(i);
-		let student = document.getElementById(`student${luckyStudentArr[i]}`);
-		student.style.color = 'black';
-		student.style.background = studentBg[i];
 	}
 }
 
