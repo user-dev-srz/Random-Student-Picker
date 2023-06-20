@@ -46,7 +46,10 @@ function exclude() {
 	console.log(absentArray); // the array was a bunch of string before
 	absentArray = absentArray.map(Number); // now the array is a bunch of numbers
 	console.log(absentArray);
-	absentList.textContent = `Absent List: ${absentArray}`;
+	absentList.textContent = `Absent: ${absentArray}`;
+	if (absentList.textContent == `Excluded: 0`) {
+		absentList.textContent = '';
+	}
 
 	randomGen(); // executes random Generator
 }

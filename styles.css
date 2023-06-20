@@ -1,9 +1,13 @@
 body {
 	text-align: center;
-	background: black;
+	background: rgb(1, 2, 17);
 	color: white;
+	font-size: 2rem;
 }
 
+.wrapper {
+	padding-top: 100px;
+}
 .picked {
 	font-size: 2rem;
 }
