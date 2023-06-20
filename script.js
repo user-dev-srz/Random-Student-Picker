@@ -99,6 +99,7 @@ function picker() {
 }
 
 function reset() {
+	picked.textContent = '?';
 	for (i = 0; i < document.querySelectorAll('li').length; ++i) {
 		document.querySelectorAll('li')[i].style.backgroundColor = 'rgb(200, 200, 200)';
 		document.querySelectorAll('li')[i].style.color = 'white';

@@ -1,4 +1,5 @@
 body {
+	text-align: center;
 	background: black;
 	color: white;
 }
@@ -7,15 +8,21 @@ body {
 	font-size: 2rem;
 }
 
+.student-chart {
+}
+
 ul {
 	display: grid;
-	grid-area: a;
-	grid-template: 'a a a a a a a';
 	gap: 10px;
+	justify-items: center;
+	grid-template: 'a a a a a a a';
+	text-align: center;
+	justify-content: center;
+	display: grid;
+	grid-area: a;
 	list-style-type: none;
 	text-align: center;
 	line-height: 50px;
-	width: 400px;
 }
 
 li {
