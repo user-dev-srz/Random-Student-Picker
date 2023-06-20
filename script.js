@@ -1,6 +1,5 @@
 const absent = document.querySelector('.absent');
 let studentArr = [];
-const studentList = document.querySelector('.list');
 let absentArray = [];
 const absentList = document.querySelector('.absent-list');
 const picked = document.querySelector('.picked');
@@ -10,6 +9,15 @@ const pickerBtn = document.querySelector('.picker-button');
 const val = document.querySelector('.sum-students');
 let luckyStudentArr = [];
 let studentBg = [];
+const saveBtn = document.querySelector('.saveBtn');
+
+saveBtn.disabled = true;
+
+function saveBtnOnOff() {
+	if (val.value > 0) {
+		saveBtn.disabled = false;
+	}
+}
 
 function getVal() {
 	pickerBtn.disabled = false;
@@ -55,7 +63,6 @@ function randomGen() {
 			console.log(`hello ${studentArr.splice(index, 1)}`); // 2nd parameter means remove one item only
 		}
 		console.log(studentArr);
-		studentList.textContent = `Student: ${studentArr}`;
 	}
 }
 
@@ -71,7 +78,6 @@ function picker() {
 			console.log(`hello ${studentArr.splice(index, 1)}`); // 2nd parameter means remove one item only
 		}
 		console.log(studentArr);
-		studentList.textContent = studentArr;
 	}
 	for (i = 0; i < luckyStudentArr.length; i++) {
 		console.log(i);

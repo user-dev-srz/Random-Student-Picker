@@ -9,16 +9,18 @@
 	</head>
 	<body>
 		<div class="wrapper"></div>
-
-		<p class="list-title">Student #:</p>
-		<p class="list"></p>
 		<p class="absent-title">Excluded Student #:</p>
 		<p class="absent-list">Absent:</p>
-		<input class="sum-students" type="text" placeholder="number of students" />
+		<input
+			class="sum-students"
+			type="text"
+			placeholder="number of students"
+			oninput="saveBtnOnOff()"
+		/>
 		<input class="absent" type="text" placeholder="absent student" />
-		<button onclick="getVal(), exclude(),studentUlEl()">save</button>
+		<button class="saveBtn" onclick="getVal(), exclude(),studentUlEl()">save</button>
 		<p class="picked">0</p>
-		<button class="picker-button" onclick="picker()">generate lucky student</button>
+		<button class="picker-button" onclick="picker()" disabled>generate lucky student</button>
 		<p class="picked-text">Previous #:</p>
 		<button class="reset" onclick="reset()" value="Reset">reset</button>
 		<div id="myProgress">
