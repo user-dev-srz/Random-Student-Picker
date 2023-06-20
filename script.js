@@ -38,8 +38,8 @@ function exclude() {
 	console.log(absentArray); // the array was a bunch of string before
 	absentArray = absentArray.map(Number); // now the array is a bunch of numbers
 	console.log(absentArray);
-
 	absentList.textContent = `Absent List: ${absentArray}`;
+
 	randomGen(); // executes random Generator
 }
 
@@ -127,6 +127,11 @@ function studentUlEl() {
 
 	for (i = 0; i < studentArr.length; i++) {
 		studentBg.push(getRandomColor());
+	}
+
+	//! this excludes the absent (student bubble deleted)
+	for (i = 0; i <= absentArray.length; i++) {
+		document.getElementById(`student${absentArray[i]}`).remove();
 	}
 
 	// let li = document.querySelectorAll('li'); DON'T KNOW WHAT THIS IS FOR
