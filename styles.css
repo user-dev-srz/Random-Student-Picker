@@ -10,7 +10,7 @@ body {
 ul {
 	display: grid;
 	grid-area: a;
-	grid-template: 'a a a a a';
+	grid-template: 'a a a a a a a';
 	gap: 10px;
 	list-style-type: none;
 	text-align: center;

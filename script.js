@@ -99,9 +99,16 @@ function picker() {
 }
 
 function reset() {
-	val.value = '';
-	absent.value = '';
-	location.reload();
+	for (i = 0; i < document.querySelectorAll('li').length; ++i) {
+		document.querySelectorAll('li')[i].style.backgroundColor = 'rgb(200, 200, 200)';
+		document.querySelectorAll('li')[i].style.color = 'white';
+	}
+
+	luckyStudent = '';
+	luckyStudentArr = [];
+	pickedText.textContent = `Previous #:`;
+
+	getVal(), exclude(), studentUlEl();
 }
 
 //TODO: use a for loop to fix current picked number and previous picked number! Maybe we need to make an array just to show previous picked (basically copying the pickedArray then removing the last one via pop)
