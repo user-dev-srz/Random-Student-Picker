@@ -10,13 +10,16 @@
 	<body>
 		<div class="wrapper"></div>
 
+		<label for="numStd">Number of Students: </label>
 		<input
+			id="numStd"
 			class="sum-students"
 			type="text"
 			placeholder="number of students"
 			oninput="saveBtnOnOff()"
 		/>
-		<input class="absent" type="text" placeholder="absent student" />
+		<label for="absent">Exclude Student#(s): </label>
+		<input id="absent" class="absent" type="text" placeholder="absent student" />
 		<button class="saveBtn" onclick="getVal(), exclude(),studentUlEl(), reset()">save</button>
 		<p class="picked">?</p>
 		<button class="picker-button" onclick="picker()" disabled>generate lucky student</button>
@@ -28,7 +31,7 @@
 			<div class="student-chart">
 				<ul class="studentUl"></ul>
 			</div>
-			<p class="absent-list">Absent:</p>
+			<p class="absent-list"></p>
 		</div>
 
 		<script src="script.js"></script>
